@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Diary</title>
+    <title>New Diary</title>
         <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
@@ -12,7 +12,16 @@
 include "../components/header.php";
 include "../components/side-links.php";
 
-echo "homepage";
+echo '
+<form action="../lib/save-new.php" method="POST">
+<label> Name</label>
+<input name="name" type="text">
+<label> Description</label>
+
+<input name="description" type="text">
+<input type="submit" value="submit">
+</form>
+';
 
 ?>
 </body>
