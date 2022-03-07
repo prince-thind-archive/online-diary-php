@@ -48,6 +48,12 @@ if ($result->num_rows > 0) {
     <input type='hidden' value='$id' name='id'>
     <input type='submit' value='delete'>
     </form>
+    <form action='./update.php' method='POST'>
+    <input type='hidden' value='$id' name='id'>
+    <input type='hidden' value='$name' name='name'>
+    <input type='hidden' value='$description' name='description'>
+    <input type='submit' value='update'>
+    </form>
     </div>
     ";
     }
