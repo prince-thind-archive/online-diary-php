@@ -55,11 +55,15 @@ while ($row = $result->fetch_assoc()) {
     </div>
 
     <div class='entry-buttons'>
-      
+
     <form action='./update.php' method='POST'>
     <input type='hidden' value='$id' name='id'>
-    <input type='hidden' value='$name' name='name'>
-    <input type='hidden' value='$description' name='description'>
+    <input type='hidden' value='"
+    . htmlentities($name, ENT_QUOTES) ."'
+     name='name'>
+    <input type='hidden' value='"
+    . htmlentities($description, ENT_QUOTES) . "'
+     name='description'>
     <input class='entry-button update-button' type='submit' value='Update'>
     </form>
 
