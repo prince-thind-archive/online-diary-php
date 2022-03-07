@@ -22,7 +22,9 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM entries";
+$id=$_GET["id"];
+
+$sql = "SELECT * FROM entries where id=$id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -34,7 +36,7 @@ if ($result->num_rows > 0) {
         echo"
     <div>
     <div>
-        <a href='./entry.php?id=$id'>$name</a>
+        $name
     </div>
     <div>
     $description
@@ -42,11 +44,15 @@ if ($result->num_rows > 0) {
     <div>
     $date
     </div>
+    <form action='../lib/delete.php' method='POST'>
+    <input type='hidden' value='$id' name='id'>
+    <input type='submit' value='delete'>
+    </form>
     </div>
     ";
     }
 } else {
-    echo "No Diary Entries";
+    echo "No Diary Entry";
 }
 
 ?>
