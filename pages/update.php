@@ -10,7 +10,7 @@
 <body>
 <?php
 include "../components/header.php";
-include "../components/side-links.php";
+include "../components/nav-links.php";
 
 $name=$_POST["name"];
 $description=$_POST["description"];

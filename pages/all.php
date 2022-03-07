@@ -10,7 +10,7 @@
 <body>
 <?php
 include "../components/header.php";
-include "../components/side-links.php";
+include "../components/nav-links.php";
 
 $servername = "localhost:3307";
 $username = "root";
