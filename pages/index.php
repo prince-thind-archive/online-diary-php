@@ -12,8 +12,9 @@
 include "../components/header.php";
 
 echo "
-<main>
 <h2 class='welcome'>Welcome to Online Diary</h2>
+
+<main>
 <p class='welcome-para'>In this Website you can create new diary entries, see all your previous diary entries. Update your existing diary entries and also delete diary entries that you don't like.</p>
 
 <a href='./all.php' class='browse-all'>Browse All</a>
