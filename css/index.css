@@ -6,6 +6,13 @@
 body {
   text-align: center;
   color: hsl(0, 0%, 20%);
+  background-image: url("./bg.jpg");
+  background-position:center;
+  background-repeat:no-repeat;
+  min-height: 100vh;
+  background-size:cover;
+  background-color: hsl(240, 0%, 80%);
+  background-blend-mode: soft-light;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -15,26 +22,36 @@ body {
 
 .nav-links {
   background-color: hsl(50, 30%, 20%);
-  display:  flex;
+  display: flex;
   justify-content: flex-start;
-
 }
-.nav-links a{
-  padding:0.5rem;
+.nav-links a {
+  padding: 0.5rem;
   text-decoration: none;
-  color:black;
-  color:white;
+  color: black;
+  color: white;
 
   font-size: 1.5rem;
 }
-.nav-links a:visited{
-  color:black;
-  color:white;
-
+.nav-links a:visited {
+  color: black;
+  color: white;
 }
 
-.nav-links a:hover{
+.nav-links a:hover {
   background-color: hsl(50, 50%, 5%);
-  color:white;
+  color: white;
+}
+.welcome{
+  padding-top: 2rem;
+  font-size: 2.5rem;
+}
+.welcome-para{
+  max-width: 50vw;
+  margin:2rem auto;
+  font-size: 1.5rem;
+}
 
+.browse-all{
+  font-size: 2rem;
 }
