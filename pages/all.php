@@ -24,29 +24,33 @@ if (!$conn) {
 $sql = "SELECT * FROM entries";
 $result = $conn->query($sql);
 
+echo "
+<main>
+<h2 class='page-heading all-entries-heading'>All Entries</h2>
+<ol class='all-entries'>
+";
+
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $name = $row["name"];
-        $description = $row["description"];
         $date = $row["date"];
         $id = $row["id"];
-        echo"
-    <div>
-    <div>
-        <a href='./entry.php?id=$id'>$name</a>
-    </div>
-    <div>
-    $description
-    </div>
-    <div>
-    $date
-    </div>
-    </div>
-    ";
+        echo "
+        <li class='entry-item'>
+        <a class='entry-item-name' href=./entry.php?id=$id>
+        $name
+        </a>
+         <span class='entry-item-date'>($date)</span>
+       
+        </li>
+        ";
     }
 } else {
     echo "No Diary Entries";
 }
+
+echo "</ol>
+</main>";
 
 ?>
 </body>
