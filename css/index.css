@@ -3,11 +3,38 @@
   margin: 0;
   box-sizing: border-box;
 }
-body{
-    text-align: center;
-    color:hsl(0, 0%, 20%);
+body {
+  text-align: center;
+  color: hsl(0, 0%, 20%);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.heading{
-    background-color: hsl(120, 50%, 80%);
+.heading {
+  background-color: hsl(120, 50%, 80%);
+}
+
+.nav-links {
+  background-color: hsl(50, 30%, 20%);
+  display:  flex;
+  justify-content: flex-start;
+
+}
+.nav-links a{
+  padding:0.5rem;
+  text-decoration: none;
+  color:black;
+  color:white;
+
+  font-size: 1.5rem;
+}
+.nav-links a:visited{
+  color:black;
+  color:white;
+
+}
+
+.nav-links a:hover{
+  background-color: hsl(50, 50%, 5%);
+  color:white;
+
 }

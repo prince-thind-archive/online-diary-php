@@ -10,7 +10,6 @@
 <body>
 <?php
 include "../components/header.php";
-include "../components/nav-links.php";
 
 echo "about";
 

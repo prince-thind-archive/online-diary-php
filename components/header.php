@@ -1,6 +1,8 @@
 <?php
-echo '<header>
-<h1 class="heading">
+echo "<header>
+<h1 class='heading'>
 Online Diary
-</h1>
-</header>';
+</h1>";
+include '../components/nav-links.php';
+
+echo "</header>";
