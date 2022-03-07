@@ -3,8 +3,7 @@
 $name = $_POST["name"];
 $description = $_POST["description"];
 $id = $_POST["id"];
-$date = time();
-
+$date = date("Y-m-d h:ia", $d);
 
 $servername = "localhost:3307";
 $username = "root";
@@ -18,11 +17,8 @@ if (!$conn) {
 
 $sql = "update entries set name='$name', description='$description' where id='$id'";
 
-if (mysqli_query($conn, $sql)) {
-    echo "record updated successfully";
-} else {
+if (!mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
 
 echo "<script>location.href='../pages/entry.php?id=$id'</script>";
