@@ -43,7 +43,7 @@ body {
   color: white;
 }
 main {
-  max-width: 50vw;
+  max-width: 60vw;
   margin: 2rem auto;
 }
 .page-heading {
@@ -59,25 +59,52 @@ main {
   padding-top: 2rem;
   font-size: 2rem;
 }
-.input-group{
+.input-group {
   margin-bottom: 2rem;
   text-align: left;
-
 }
-.input-group label{
+.input-group label {
   display: block;
 }
-.input-field{
+.input-field {
   width: 100%;
-  height:  2rem;
+  height: 2rem;
   opacity: 0.9;
-  border:2px solid gray;
-  padding:0 1rem;
+  border: 2px solid gray;
+  padding: 0 1rem;
 }
-textarea.input-field{
-  height:  10rem;
+textarea.input-field {
+  height: 10rem;
 }
-.input-button{
-  padding:0.5rem 1rem;
+.input-button {
+  padding: 0.5rem 1rem;
   font-size: 1.2rem;
+}
+
+.entry-description {
+  word-wrap: break-word;
+  font-size: 1.2rem;
+}
+.entry-time {
+  text-align: right;
+  font-size: 1.3rem;
+  color:hsl(60, 50%, 10%);
+  margin-top: 1rem;
+}
+.entry-buttons *{
+  display: inline-block;
+}
+.entry-button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+}
+.entry-button:hover {
+  cursor: pointer;
+}
+.update-button {
+  background-color: hsl(240, 50%, 70%);
+}
+.delete-button {
+  background-color: hsl(0, 50%, 70%);
 }

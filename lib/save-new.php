@@ -1,8 +1,8 @@
 <?php
 
-$name = $_POST["name"];
-$description = $_POST["description"];
-$date = date("Y-m-d h:ia", $d);
+$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_ADD_SLASHES);
+$description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_ADD_SLASHES);
+$date = date("Y-m-d h:ia");
 
 $servername = "localhost:3307";
 $username = "root";
@@ -21,4 +21,4 @@ if (!mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-echo '<script>location.href="../pages/index.php"</script>';
+echo '<script>location.href="../pages/all.php"</script>';

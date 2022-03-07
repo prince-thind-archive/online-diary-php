@@ -21,43 +21,56 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$id=$_GET["id"];
+$id = $_GET["id"];
 
 $sql = "SELECT * FROM entries where id=$id";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $name = $row["name"];
-        $description = $row["description"];
-        $date = $row["date"];
-        $id = $row["id"];
-        echo"
-    <div>
-    <div>
+if ($result->num_rows == 0) {
+    echo "
+    <main>
+    <div class='page-heading'>
+    Error 404 No diary Entry Found!
+    </div>
+    </main>
+    ";
+}
+
+while ($row = $result->fetch_assoc()) {
+    $name = $row["name"];
+    $description = $row["description"];
+    $date = $row["date"];
+    $id = $row["id"];
+
+    echo "
+    <main>
+    <h2 class='page-heading'>
         $name
-    </div>
-    <div>
+    </h2>
+    <p class='entry-description'>
     $description
-    </div>
-    <div>
+    </p>
+    <div class='entry-time'>
     $date
     </div>
-    <form action='../lib/delete.php' method='POST'>
-    <input type='hidden' value='$id' name='id'>
-    <input type='submit' value='delete'>
-    </form>
+
+    <div class='entry-buttons'>
+      
     <form action='./update.php' method='POST'>
     <input type='hidden' value='$id' name='id'>
     <input type='hidden' value='$name' name='name'>
     <input type='hidden' value='$description' name='description'>
-    <input type='submit' value='update'>
+    <input class='entry-button update-button' type='submit' value='Update'>
     </form>
+
+    <form action='../lib/delete.php' method='POST'>
+    <input type='hidden' value='$id' name='id'>
+    <input class='entry-button delete-button' type='submit' value='Delete'>
+    </form>
+
     </div>
+    </main>
     ";
-    }
-} else {
-    echo "No Diary Entry";
 }
 
 ?>

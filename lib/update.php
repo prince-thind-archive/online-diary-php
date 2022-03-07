@@ -1,9 +1,9 @@
 <?php
 
-$name = $_POST["name"];
-$description = $_POST["description"];
+$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_ADD_SLASHES);
+$description =filter_input(INPUT_POST, 'description', FILTER_SANITIZE_ADD_SLASHES);
 $id = $_POST["id"];
-$date = date("Y-m-d h:ia", $d);
+$date = date("Y-m-d h:ia");
 
 $servername = "localhost:3307";
 $username = "root";
