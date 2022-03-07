@@ -12,14 +12,24 @@
 include "../components/header.php";
 
 echo '
-<form action="../lib/save-new.php" method="POST">
-<label> Name</label>
-<input name="name" type="text">
-<label> Description</label>
+<h2 class="page-heading">Write new Diary Entry</h2>
 
-<input name="description" type="text">
-<input type="submit" value="submit">
+<main>
+<form action="../lib/save-new.php" method="POST">
+<div class="input-group">
+<label>Name:</label>
+<input class="input-field" name="name" required type="text">
+</div>
+<div class="input-group">
+<label>Description:</label>
+<textarea class="input-field" name="description" required type="text"></textarea>
+</div>
+<div>
+<input class="input-button" type="submit" value="submit">
+</div>
 </form>
+</main>
+
 ';
 
 ?>

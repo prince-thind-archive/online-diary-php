@@ -5,6 +5,7 @@ $description = $_POST["description"];
 $id = $_POST["id"];
 $date = time();
 
+
 $servername = "localhost:3307";
 $username = "root";
 $password = "";
@@ -22,5 +23,6 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+
 
 echo "<script>location.href='../pages/entry.php?id=$id'</script>";

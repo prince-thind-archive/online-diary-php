@@ -15,16 +15,30 @@ $name=$_POST["name"];
 $description=$_POST["description"];
 $id=$_POST["id"];
 
-echo "
-<form action='../lib/update.php' method='POST'>
-<label> Name</label>
-<input name='name' type='text' value=$name>
-<label> Description</label>
+if($id==''){
+echo "<script>location.href='../pages/all.php'</script>";
+}
 
-<input name='description' type='text' value=$description>
-<input name='id' type='hidden' value=$id>
-<input type='submit' value='submit'>
+echo "
+<h2 class='page-heading'>Update Diary Entry</h2>
+
+<main>
+<form action='../lib/update.php' method='POST'>
+<div class='input-group'>
+<label>Name:</label>
+<input value=$name class='input-field' name='name' required type='text'>
+</div>
+<div class='input-group'>
+<label>Description:</label>
+<textarea class='input-field' name='description' required type='text'>$description</textarea>
+</div>
+<div>
+<input type='hidden' name='id' value=$id>;
+<input class='input-button' type='submit' value='submit'>
+</div>
 </form>
+</main>
+
 ";
 
 ?>
