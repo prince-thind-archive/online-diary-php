@@ -26,7 +26,7 @@ echo "
 <form action='../lib/update.php' method='POST'>
 <div class='input-group'>
 <label>Name:</label>
-<input value=$name class='input-field' name='name' required type='text'>
+<input value='$name' class='input-field' name='name' required type='text'>
 </div>
 <div class='input-group'>
 <label>Description:</label>
